@@ -1,0 +1,35 @@
+Step 1- Technique used
+Use regular expressions to search for combinations of keywords directly in the Title and Abstract fields, focusing on terms related to both deep learning (e.g., "CNN," "neural network") and virology/epidemiology (e.g., "virus," "outbreak").
+To make the approach semantic-friendly, combine terms in specific patterns (e.g., (deep learning|neural network) AND (virology|virus|epidemiology)) and check that both types of terms co-occur in the same text context.
+
+
+        Why it works?
+Simple keyword-based filtering would pull in many irrelevant results (e.g., articles mentioning "neural network" but unrelated to virology).
+This heuristic-based filtering minimizes irrelevant matches by ensuring co-occurrence of target keywords.
+
+
+Step 2- Technique used
+For Text Mining: Look for keywords related to NLP (e.g., "natural language processing," "text analysis").
+For Computer Vision: Look for image-related terms (e.g., "image processing," "CNN," "segmentation").
+If both are present, classify as Both; otherwise, use Other.
+
+        Why it works?
+Avoids complex models by using domain-specific keywords and simple logic, which is highly interpretable and efficient.
+
+Step 3- Technique used
+Define a set of common method names (e.g., "CNN," "RNN") and use regular expressions to extract mentions in the abstract.
+
+        Why it works?
+This heuristic-based approach identifies method names efficiently, providing valuable information without requiring extensive model training.
+
+
+FINAL DATASET STATISTICS
+Total papers - 11450
+Papers after filtering - 1055
+Classification - Computer Vision papers - 395 
+                 Text Mining papers - 41
+                 Both - 18
+                 Other - Papers that mention deep learning but not specifically about image or text classification
+
+
+
